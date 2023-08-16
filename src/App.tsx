@@ -18,11 +18,7 @@ function App() {
   const { quotes, setQuotes, setActiveIndex, activeIndex } =
     useContext(QuoteContext);
 
-  const {
-    data: initialData,
-    isLoading,
-    isSuccess,
-  } = useQuery({
+  const { data: initialData, isSuccess } = useQuery({
     queryKey: ["quote"],
     queryFn: () =>
       Axios.get<ApiResponse>("https://api.quotable.io/random").then(
@@ -60,7 +56,7 @@ function App() {
     }
   };
 
-  if (isLoading) return "Loading...";
+  // if (isLoading) return "Loading...";
   return (
     <div className="h-screen bg-gray-100">
       <div className="top-0 h-10 w-screen bg-orange-500"></div>
