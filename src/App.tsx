@@ -69,14 +69,12 @@ function App() {
 
   return (
     <div className="h-screen bg-gray-100">
-      <div className="h-10 w-screen bg-orange-500"></div>
+      <div className="h-10 w-screen bg-orange-500" />
       <div className="container my-0 mx-auto mt-16 max-w-4xl justify-center">
         <Quote />
         <div className="flex flex-wrap justify-between content-center">
           <div>
             <button
-              // TODO reasearch on difference between commented code and original
-              // onClick={() => handlePrevious()}
               onClick={handlePrevious}
               className={
                 activeIndex == 0
@@ -88,7 +86,7 @@ function App() {
             </button>
 
             <button
-              onClick={() => handleNext()}
+              onClick={handleNext}
               className="border border-black p-3 md:p-5 rounded-full"
             >
               <GrNext />
