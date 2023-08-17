@@ -29,7 +29,7 @@ function App() {
   } = useQuery({
     queryKey: ["quote"],
     queryFn: () =>
-      Axios.get<ApiResponse>("https://api.quotable.io/random").then(
+      Axios.get<ApiResponse>("https://majestic-naiad-7dace3.netlify.app").then(
         (res) => res.data
       ),
     refetchOnWindowFocus: false,
@@ -37,9 +37,9 @@ function App() {
 
   const { mutateAsync } = useMutation({
     mutationFn: async () => {
-      return Axios.get<ApiResponse>("https://api.quotable.io/random").then(
-        ({ data }) => data
-      );
+      return Axios.get<ApiResponse>(
+        "https://majestic-naiad-7dace3.netlify.app"
+      ).then(({ data }) => data);
     },
   });
 
